@@ -1,5 +1,8 @@
 #! /usr/bin/python
 # Binh Pham - bphamt@gmail.com
+# Lists all the child account of a cPanel owner
+# Gives the total limit of all the child account under the owner account (also including the owner)
+# Gives the total disk space usage of all the child account under the cPanel owner account (including the owner)
 
 import commands
 
