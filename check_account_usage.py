@@ -38,7 +38,7 @@ def get_total_usage(owner):
 
 
 for key in resellers:
-    print("cPanel Owner: " + key)
+    print("Reseller Owner: " + key)
     print(" - Child account: " + str(resellers[key]))
     get_total_usage(key)
     print("\n")
