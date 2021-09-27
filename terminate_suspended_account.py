@@ -1,4 +1,7 @@
 #! /usr/bin/python
+# Binh Pham - bphamt@gmail.com
+# Lists all the suspended account of a cPanel
+# Gives the option to terminate all the suspended accounts
 
 # Used for linux command-line manipulation
 import os
