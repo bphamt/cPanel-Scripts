@@ -33,9 +33,12 @@ def get_total_usage(owner):
         limit_value = str(commands.getstatusoutput("uapi --user=" + str(x) + " Quota get_quota_info | grep -w 'megabyte_limit:'"))
         limit_usage = (((limit_value.split()[3]).replace('"', '')).replace("'", "")).strip(")")
         total_limit += float(limit_usage)
-    print("Total limit of all the cPanel account: " + str(total_limit) + "MB")
-    print("Total usage of all the cPanel account of the reseller: " + str(total_disk_usage) + "MB")
 
+    if str(total_limit) == "0.0":
+        print("Total limit of all the cPanel account: Unlimited")
+    else:
+        print("Total limit of all the cPanel account: " + str(total_limit) + "MB")
+    print("Total usage of all the cPanel account of the reseller: " + str(total_disk_usage) + "MB")
 
 for key in resellers:
     print("Reseller Owner: " + key)
