@@ -17,12 +17,19 @@ def get_disk_usage():
     print(" - Disk Size: " + str((disk_usage)[1]))
     print(" - Disk Used: " + str((disk_usage)[2]))
     print(" - Disk Available: " + str((disk_usage)[3]))
-    print(" - Disk Used Percentage: " + str((disk_usage)[4]))
+
+    index = 0
+    found_index = 0
+    for item in disk_usage:
+        if "%" in item:
+            found_index = index
+        index += 1
+    print(" - Disk Used Percentage: " + str((disk_usage)[found_index]))
 
 
 def get_uptime():
     uptime = (os.popen('uptime').read()).split()
-    print("\nUptime:")
+    print("Uptime:")
     print(" - " + str(uptime[2]) + " " + str(uptime[3]).rstrip(','))
 
 
@@ -46,7 +53,7 @@ def get_inode_usage():
         if "%" in item:
             found_index = index
         index += 1
-    print("Inode Usage:")
+    print("\nInode Usage:")
     print(" - " + str(inode_usage[found_index]))
 
 
@@ -56,9 +63,9 @@ def get_mysql_version():
     print(" - " + str(mysql_version[4]).rstrip(','))
 
 
-get_disk_usage()
-get_uptime()
 get_cpanel_version()
 get_kernel_version()
+get_uptime()
+get_disk_usage()
 get_inode_usage()
 get_mysql_version()
