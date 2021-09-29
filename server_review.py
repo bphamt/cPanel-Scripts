@@ -40,8 +40,14 @@ def get_kernel_version():
 
 def get_inode_usage():
     inode_usage = (os.popen('df -i | grep -w "/"').read()).split()
+    index = 0
+    found_index = 0
+    for item in inode_usage:
+        if "%" in item:
+            found_index = index
+        index += 1
     print("Inode Usage:")
-    print(" - " + str(inode_usage[4]))
+    print(" - " + str(inode_usage[found_index]))
 
 
 def get_mysql_version():
