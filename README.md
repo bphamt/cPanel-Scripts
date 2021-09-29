@@ -1,6 +1,6 @@
 # cPanel-Scripts
 
-A list of cPanel python scripts I've created:
+A list of cPanel python scripts I've created (Tested with Python 2.7):
 
 ###### check_account_usage.py 
 - Provides a total disk usage & limit of all the child account under the owner account (also including the owner)
