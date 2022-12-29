@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#! /opt/alt/python27/bin/python2.7
 
 import commands
 import subprocess
