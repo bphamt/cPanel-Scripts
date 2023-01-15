@@ -7,3 +7,5 @@ A list of cPanel python scripts I've created (Tested with Python 2.7):
 
 ###### terminate_suspended_account.py
 - Provides a list of suspended account and gives an option to terminate them
+
+test
